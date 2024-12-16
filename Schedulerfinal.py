@@ -240,15 +240,10 @@ def main():
                 if key == 'A':
                     show_rtc = False  # Hide RTC and show modes
                     handle_mode_selection()
-                elif key == '*':
-                    update_lcd("Goodbye!")
-                    break
-                elif key:  # Any key press updates the last input time
-                    last_input_time = current_time
-                    break
                 elif key == 'D':
                     ring_bell()
-                    break
+                else:
+                    update_lcd("Invalid Input")
 
             time.sleep(0.1)  # Prevent busy-wait loop
     except KeyboardInterrupt:
